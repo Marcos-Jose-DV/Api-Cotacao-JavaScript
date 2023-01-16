@@ -13,9 +13,6 @@ let moedaBtc,
     btcMax,
     btcMin;
 
-
-
-
 const url = 'https://economia.awesomeapi.com.br/last/'
 const coins = 'USD-BRL,EUR-BRL,BTC-BRL'
 
@@ -63,8 +60,6 @@ fetch(url + coins)
             style: 'currency',
             currency: 'BRL'
         })
-
-
         document.getElementById('title').innerHTML = dolarReal.name
         document.getElementById('thisdate').innerHTML = dataDolar.toLocaleString()
         document.getElementById('maxvalue').innerHTML = parseFloat(dolarReal.high).toLocaleString('pt-br', {
@@ -75,42 +70,24 @@ fetch(url + coins)
             style: 'currency',
             currency: 'BRL'
         })
-
     })
-
-
-
-
-
-// addEventListener("click", function mudarParaEuro(){
-//     document.getElementById('title').innerHTML = moedaEuro
-//     document.getElementById('thisdate').innerHTML = dataEuro.toLocaleString()
-//     document.getElementById('maxvalue').innerHTML = euroMax.toLocaleString()
+document.getElementById('maxvalue').innerHTML = euroMax.toLocaleString()
 
 function MudarParaEuro() {
     document.getElementById('title').innerHTML = moedaEuro
     document.getElementById('thisdate').innerHTML = dataEuro.toLocaleString()
     document.getElementById('maxvalue').innerHTML = euroMax
     document.getElementById('minvalue').innerHTML = euroMin
-
-
 }
 function MudarParaDolar() {
     document.getElementById('title').innerHTML = moedaDolar
     document.getElementById('thisdate').innerHTML = dataDolar.toLocaleString()
     document.getElementById('maxvalue').innerHTML = dolarMax
     document.getElementById('minvalue').innerHTML = dolarMin
-
-
 }
 function MudarParaBtc() {
     document.getElementById('title').innerHTML = moedaBtc
     document.getElementById('thisdate').innerHTML = dataBtc.toLocaleString()
     document.getElementById('maxvalue').innerHTML = btcMax
     document.getElementById('minvalue').innerHTML = btcMin
-
-
 }
-
-
-
